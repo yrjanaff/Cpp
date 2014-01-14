@@ -5,15 +5,14 @@ using namespace std;
 
 int main()
 {
-  int MAX = 10000000;
+  int MAX = 10000000; //number of spins
  
   int count = 0;
   int rnd = rand() % 2; //creates random number between 0 and 1
   int seq = 1;
   int vals[2];
   int size = 10;
-  //array<int*, size> seqs = {1};
-    int* seqs = new int[size];
+  int* seqs = new int[size];
     
     
   int prevRnd;
@@ -39,7 +38,7 @@ int main()
                   break;
               }
           
-              else
+              else //Allocates new array with bigger size, and copy contents of old array
               {
                   size_t newSize = size * 2;
                   int* newArr = new int[newSize];
