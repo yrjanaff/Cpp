@@ -1,0 +1,46 @@
+#include <iostream>
+#include <array>
+
+using namespace std;
+
+int main()
+{
+  int n;
+  cout << "Please enter number of spins (then press 'enter'):" << endl;
+  cin >> n;
+
+  int count = 0;
+  int rnd = rand() % 2; //creates random number between 0 and 1
+  int seq = 1;
+  int vals[2];
+  int seqs[n] = new int();
+
+  int prevRnd;
+  while (count < n)
+  {
+      count++;
+      vals[rnd] += 1;
+      prevRnd = rnd;
+      rnd = rand() % 2;
+
+      if (rnd == prevRnd)
+      {
+	seq++;
+      }
+      else
+      {
+	  seqs[seq]++;
+	  seq = 1;
+      }
+  }
+  cout << "\nR E S U L T S:\n";
+  cout << "Len.\tCount";
+  for (int i = 1; i < sizeof(seqs); i++)
+  {
+      if (seqs[i] != 0)
+      {
+	cout << i << "\t" << seqs[i] << endl;
+      }
+ }
+}
+

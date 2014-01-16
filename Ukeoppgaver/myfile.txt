@@ -1,0 +1,7 @@
+Hei
+Dette er en 
+testfil.
+Hvor mange
+ord har denne
+filen?
+Nå er det 16 ord
