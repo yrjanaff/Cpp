@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  int i = 0;
+  string test;
+  while (cin >> test) ++i;
+  cout << i << endl;
+  /*  ifstream file;
+  string filename;
+ start:
+  cout << "Enter the file name: " << endl;
+  cin >> filename;
+
+  file.open(filename.c_str());
+  if (file.is_open())
+    {
+      cout << "The file " << filename << " is now open" << endl;
+      int i = 0;
+      char c;
+  
+
+
+      file.close();
+      file.clear();
+    }else
+    {
+      cout << "Filen finnes ikke. Prøv igjen." << endl;
+      goto start;
+      }*/
+}
