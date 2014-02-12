@@ -1,1 +1,8 @@
 Dette er et directory for filene i oblig 1
+
+Alle filene er kompilert og testet på studssh.
+Filene i oppgave 2 er testet med valgrind, og har ingen minnelekasjer (så vidt jeg kunne se).
+
+Kjente feil:
+- wordcloud_stl får av en eller annen grunn med seg et tomt tegn som top 10 med 279 forekomster.
+- wordcloud_stl og wordcloud_fast får begge tegnet '\' på førsteplass med 5060 forekomster når de kjører på macen min. Dette skjer ikke på studssh.
