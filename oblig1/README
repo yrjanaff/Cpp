@@ -8,4 +8,4 @@ Kjente feil:
 - wordcloud_stl og wordcloud_fast får begge tegnet '\' på førsteplass med 5060 forekomster når de kjører på macen min. Dette skjer ikke på studssh.
 
 PS
-Jeg fikk rettet begge "feilene" ved å modifisere stopchars_c i stop.h.
+Fikk rettet den første feilen ved å modifisere stopchars_c i stop.h filen. Testet ikke om den andre feilen også kan rettes på denne måten da det står i oppgaveteksten at denne filen ikke skal endres.
