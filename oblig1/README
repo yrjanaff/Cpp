@@ -1,4 +1,4 @@
-<h1>Dette er et directory for filene i oblig 1</h2>
+Dette er et directory for filene i oblig 1
 
 Alle filene er kompilert og testet på studssh.
 Filene i oppgave 2 er testet med valgrind, og har ingen minnelekasjer (så vidt jeg kunne se).
