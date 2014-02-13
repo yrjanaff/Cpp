@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Metode for å finne stoppord. Returnerer true hvis ordet er et stoppord, false hvis ikke
 bool find_stopwrd(string word)
 {
   size_t length = strlen(stopwords_c);
@@ -26,6 +27,7 @@ bool find_stopwrd(string word)
   return false;
 }
 
+//Metode for å finne og fjerne stopchars fra ord. Returnere det samme ordet, uten eventuelle stopchars på slutten.
 string remove_stopchars(string word)
 {
   size_t length = strlen(stopchars_c);
@@ -41,6 +43,7 @@ string remove_stopchars(string word)
   return word;
 }
 
+//Leser inn ord for ord med cin. Etter diverse sjekker legges ordet inn i map som key, mens antall forekomster er value
 void read_and_store(map<string, int> &wrdcnt)
 {
   int i = 0;
@@ -54,35 +57,39 @@ void read_and_store(map<string, int> &wrdcnt)
       
 	if(!find_stopwrd(wrd))
 	{
-	  it = wrdcnt.find(wrd);
+	  it = wrdcnt.find(wrd);//sjekker om ordet finnes i mappet
 	  if(it == wrdcnt.end())
 	    wrdcnt.insert(pair<string,int>(wrd,1)); //Setter inn ordet for første gang
 
-	  else 
+	  else //ordet finnes allerede, inkrementerer antall forekomster
 	    it->second++;
 	}
     }
 }
 
+//Søker gjennom mappet for å finne de wrdnum største verdiene. Skriver ut en og en.
 void write(int wrdnum, map<string, int> &wrdcnt)
 {
   map<string,int>::iterator it;
-  for (int i = 1; i <= wrdnum; i++) {
-    if (wrdcnt.empty())
-      break;
-    // Go through the map and find the max item.
-    int max_value = 0;
-    string max_word = "";
-    for (it=wrdcnt.begin(); it !=wrdcnt.end(); ++it) {
-      if (it->second > max_value) {
-        max_value = it->second;
-        max_word = it->first;
-      }    
+  for (int i = 1; i <= wrdnum; i++) 
+    {
+      if (wrdcnt.empty())
+	break;
+      // Går gjennom mappet og finner største value
+      int max_value = 0;
+      string max_word = "";
+      for (it=wrdcnt.begin(); it !=wrdcnt.end(); ++it) 
+	{
+	  if (it->second > max_value) 
+	    {
+	      max_value = it->second;
+	      max_word = it->first;
+	    }    
+	}
+      // Sletter største value fra mappet, slik at vi ikke finner det igjen
+      wrdcnt.erase(max_word);
+      cout << max_word << " : " <<  max_value <<  endl;
     }
-    // Erase this entry and print.
-    wrdcnt.erase(max_word);
-    cout << max_word << " : " <<  max_value <<  endl;
-  }
 }
 
 

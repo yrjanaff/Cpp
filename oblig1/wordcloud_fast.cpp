@@ -10,6 +10,7 @@ string * wrds = new string[wrdcnt_length];
 int * cnt = new int[wrdcnt_length];
 int next_slot = 0; //neste ledige plass i arrayet
 
+//Metode for å finne stoppord. Returnerer true hvis ordet er et stoppord, false hvis ikke 
 bool find_stopwrd(string word)
 {
   size_t length = strlen(stopwords_c);
@@ -30,6 +31,7 @@ bool find_stopwrd(string word)
   return false;
 }
 
+//Metode for å finne og fjerne stopchars fra ord. Returnere det samme ordet, uten eventuelle stopchars på slutten.
 string remove_stopchars(string word)
 {
   size_t length = strlen(stopchars_c);
@@ -45,6 +47,7 @@ string remove_stopchars(string word)
   return word;
 }
 
+//Metode for å søke gjennom arrayet for et bestemt ord. Returnerer posisjonen
 int find_word(string word)
 {
   for (int i = 0; i <= next_slot; i++)
@@ -55,6 +58,7 @@ int find_word(string word)
   return -1;
 }
 
+//Leser inn ord for ord med cin. Etter diverse sjekker legges ordet inn i arrayet wrds, mens antall forekomster blir lagt i samme posisjon i arrayet cnt  
 void read_and_store()
 {
     string  word;
@@ -81,6 +85,7 @@ void read_and_store()
     }
 }
 
+//Søker gjennom cnt for å finne de wrdnum største verdiene. Skriver ut en og en. 
 void write(int wrdnum)
 {
   for(int j = 0; j < wrdnum; j++)
@@ -94,7 +99,7 @@ void write(int wrdnum)
 	    }
 	}
       cout << wrds[max_pos] << " : " << cnt[max_pos] << endl;
-      cnt[max_pos] = 0;
+      cnt[max_pos] = 0; //setter posisjonen til den høyeste verdien til 0;
     }
 }
 
