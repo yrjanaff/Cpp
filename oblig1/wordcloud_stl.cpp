@@ -56,14 +56,14 @@ void read_and_store(map<string, int> &wrdcnt)
       wrd = remove_stopchars(wrd);
       
 	if(!find_stopwrd(wrd))
-	{
-	  it = wrdcnt.find(wrd);//sjekker om ordet finnes i mappet
-	  if(it == wrdcnt.end())
-	    wrdcnt.insert(pair<string,int>(wrd,1)); //Setter inn ordet for første gang
-
-	  else //ordet finnes allerede, inkrementerer antall forekomster
-	    it->second++;
-	}
+	  {
+	    it = wrdcnt.find(wrd);//sjekker om ordet finnes i mappet
+	    if(it == wrdcnt.end())
+	      wrdcnt.insert(pair<string,int>(wrd,1)); //Setter inn ordet for første gang
+	    
+	    else //ordet finnes allerede, inkrementerer antall forekomster
+	      it->second++;
+	  }
     }
 }
 
