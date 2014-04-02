@@ -1,6 +1,7 @@
 Dette er mappen for s188902's oblig 2.
 
 Fireworks ligger i mappe "oppgave1". Custom ligger i mappen "oppgave3".
+Filene er laget i lubuntu VM'en.
 
 Kjente feil:
 Det er ikke mulig å kompilere fireworks med komandoen 'make fireworks' og tilsvarende med custom. I stedet kan man kompilere med bare 'make'.
