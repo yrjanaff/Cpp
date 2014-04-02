@@ -14,7 +14,7 @@
 
 **4.** *Klassene `animated` og `animation_canvas` legger opp til polymorfi. Kunne `animation_canvas` vært implementert med templates i stedet? Hva ville vært fordeler og ulemper?*
 
-**Svar**: Ja, det kunne den. Fordelen er at det antakelig vis ville gått fortere enn å bruke polymorfi.
+**Svar**: Ja, det kunne den. Nå er det sånn at det vi vanligvis kaller polymorfi helst kalles dynamisk polymorfi og bruk at templates kalles statisk polymorfi. Det betyr at du gir et template parameter 'compile time', mens man i dynamisk polymorfi gir parameteret runtime. Fordelen er at det da kan kjøre litt bedre/får bedre ytelse, og man ka gjøre det mer generisk. Ulempene er at syntaksen kan være en smule kompleks, det tar lenger tid å kompilere og feilmeldingene er vanskeligerer å forstå.
 
 **5.** *Bortsett fra det du har diskutert, ser du andre svakheter i designet, eller andre ting du ville gjort anderledes?*
 
